@@ -1,0 +1,213 @@
+{% extends 'base/layout.html' %}
+{% block title %}CIDR Conversion Table{% endblock %}
+
+{% block content %}
+  <div class="row">
+    <div class="col">
+    <table class="table table-sm table-bordered table-hover table-striped">
+      <thead>
+        <tr>
+          <th>CIDR prefix length</th>
+          <th>Netmask</th>
+          <th>Wildcard Bits</th>
+          <th>Number of Usable IPs</th>
+        </tr>
+      </thead>
+      <tbody style="font-family: 'Courier New', Courier, monospace;">
+        <tr>
+          <td class="text-end">/1</td>
+          <td class="text-end">128.0.0.0</td>
+          <td class="text-end">127.255.255.255</td>
+          <td class="text-end">2,147,483,646</td>
+        </tr>
+        <tr>
+          <td class="text-end">/2</td>
+          <td class="text-end">192.0.0.0</td>
+          <td class="text-end">63.255.255.255</td>
+          <td class="text-end">1,073,741,822</td>
+        </tr>
+        <tr>
+          <td class="text-end">/3</td>
+          <td class="text-end">224.0.0.0</td>
+          <td class="text-end">31.255.255.255</td>
+          <td class="text-end">536,870,910</td>
+        </tr>
+        <tr>
+          <td class="text-end">/4</td>
+          <td class="text-end">240.0.0.0</td>
+          <td class="text-end">15.255.255.255</td>
+          <td class="text-end">268,435,454</td>
+        </tr>
+        <tr>
+          <td class="text-end">/5</td>
+          <td class="text-end">248.0.0.0</td>
+          <td class="text-end">7.255.255.255</td>
+          <td class="text-end">134,217,726</td>
+        </tr>
+        <tr>
+          <td class="text-end">/6</td>
+          <td class="text-end">252.0.0.0</td>
+          <td class="text-end">3.255.255.255</td>
+          <td class="text-end">67,108,862</td>
+        </tr>
+        <tr>
+          <td class="text-end">/7</td>
+          <td class="text-end">254.0.0.0</td>
+          <td class="text-end">1.255.255.255</td>
+          <td class="text-end">33,554,430</td>
+        </tr>
+        <tr>
+          <td class="text-end">/8</td>
+          <td class="text-end">255.0.0.0</td>
+          <td class="text-end">0.255.255.255</td>
+          <td class="text-end">16,777,214</td>
+        </tr>
+        <tr>
+          <td class="text-end">/9</td>
+          <td class="text-end">255.128.0.0</td>
+          <td class="text-end">0.127.255.255</td>
+          <td class="text-end">8,388,606</td>
+        </tr>
+        <tr>
+          <td class="text-end">/10</td>
+          <td class="text-end">255.192.0.0</td>
+          <td class="text-end">0.63.255.255</td>
+          <td class="text-end">4,194,302</td>
+        </tr>
+        <tr>
+          <td class="text-end">/11</td>
+          <td class="text-end">255.224.0.0</td>
+          <td class="text-end">0.31.255.255</td>
+          <td class="text-end">2,097,150</td>
+        </tr>
+        <tr>
+          <td class="text-end">/12</td>
+          <td class="text-end">255.240.0.0</td>
+          <td class="text-end">0.15.255.255</td>
+          <td class="text-end">1,048,574</td>
+        </tr>
+        <tr>
+          <td class="text-end">/13</td>
+          <td class="text-end">255.248.0.0</td>
+          <td class="text-end">0.7.255.255</td>
+          <td class="text-end">524,286</td>
+        </tr>
+        <tr>
+          <td class="text-end">/14</td>
+          <td class="text-end">255.252.0.0</td>
+          <td class="text-end">0.3.255.255</td>
+          <td class="text-end">262,142</td>
+        </tr>
+        <tr>
+          <td class="text-end">/15</td>
+          <td class="text-end">255.254.0.0</td>
+          <td class="text-end">0.1.255.255</td>
+          <td class="text-end">131,070</td>
+        </tr>
+        <tr>
+          <td class="text-end">/16</td>
+          <td class="text-end">255.255.0.0</td>
+          <td class="text-end">0.0.255.255</td>
+          <td class="text-end">65,534</td>
+        </tr>
+        <tr>
+          <td class="text-end">/17</td>
+          <td class="text-end">255.255.128.0</td>
+          <td class="text-end">0.0.127.255</td>
+          <td class="text-end">32,766</td>
+        </tr>
+        <tr>
+          <td class="text-end">/18</td>
+          <td class="text-end">255.255.192.0</td>
+          <td class="text-end">0.0.63.255</td>
+          <td class="text-end">16,382</td>
+        </tr>
+        <tr>
+          <td class="text-end">/19</td>
+          <td class="text-end">255.255.224.0</td>
+          <td class="text-end">0.0.31.255</td>
+          <td class="text-end">8,190</td>
+        </tr>
+        <tr>
+          <td class="text-end">/20</td>
+          <td class="text-end">255.255.240.0</td>
+          <td class="text-end">0.0.15.255</td>
+          <td class="text-end">4,094</td>
+        </tr>
+        <tr>
+          <td class="text-end">/21</td>
+          <td class="text-end">255.255.248.0</td>
+          <td class="text-end">0.0.7.255</td>
+          <td class="text-end">2,046</td>
+        </tr>
+        <tr>
+          <td class="text-end">/22</td>
+          <td class="text-end">255.255.252.0</td>
+          <td class="text-end">0.0.3.255</td>
+          <td class="text-end">1,022</td>
+        </tr>
+        <tr>
+          <td class="text-end">/23</td>
+          <td class="text-end">255.255.254.0</td>
+          <td class="text-end">0.0.1.255</td>
+          <td class="text-end">510</td>
+        </tr>
+        <tr>
+          <td class="text-end">/24</td>
+          <td class="text-end">255.255.255.0</td>
+          <td class="text-end">0.0.0.255</td>
+          <td class="text-end">254</td>
+        </tr>
+        <tr>
+          <td class="text-end">/25</td>
+          <td class="text-end">255.255.255.128</td>
+          <td class="text-end">0.0.0.127</td>
+          <td class="text-end">126</td>
+        </tr>
+        <tr>
+          <td class="text-end">/26</td>
+          <td class="text-end">255.255.255.192</td>
+          <td class="text-end">0.0.0.63</td>
+          <td class="text-end">62</td>
+        </tr>
+        <tr>
+          <td class="text-end">/27</td>
+          <td class="text-end">255.255.255.224</td>
+          <td class="text-end">0.0.0.31</td>
+          <td class="text-end">30</td>
+        </tr>
+        <tr>
+          <td class="text-end">/28</td>
+          <td class="text-end">255.255.255.240</td>
+          <td class="text-end">0.0.0.15</td>
+          <td class="text-end">14</td>
+        </tr>
+        <tr>
+          <td class="text-end">/29</td>
+          <td class="text-end">255.255.255.248</td>
+          <td class="text-end">0.0.0.7</td>
+          <td class="text-end">6</td>
+        </tr>
+        <tr>
+          <td class="text-end">/30</td>
+          <td class="text-end">255.255.255.252</td>
+          <td class="text-end">0.0.0.3</td>
+          <td class="text-end">2</td>
+        </tr>
+        <tr>
+          <td class="text-end">/31</td>
+          <td class="text-end">255.255.255.254</td>
+          <td class="text-end">0.0.0.1</td>
+          <td class="text-end">0</td>
+        </tr>
+        <tr>
+          <td class="text-end">/32</td>
+          <td class="text-end">255.255.255.255</td>
+          <td class="text-end">0.0.0.0</td>
+          <td class="text-end">1</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock content %}

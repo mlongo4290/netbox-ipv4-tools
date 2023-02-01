@@ -1,0 +1,58 @@
+{% extends 'base/layout.html' %}
+{% load static %}
+
+{% block title %}CIDR to IP Range{% endblock %}
+
+{% block content %}
+<div class="row">
+  <div class="col-6">
+    <div class="card">
+      <div class="card-body">
+        <div class="mb-3">
+          <label for="cidr" class="form-label">CIDR</label>
+          <input type="text" class="form-control" id="cidr" value="10.0.0.0/24">
+        </div>
+        <button type="submit" class="btn btn-primary" id="btn_cidr_range">Calculate</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="card d-none" id="card-result">
+      <div class="card-header">
+        <h5>Result</h5>
+      </div>
+      <div class="card-body">
+        <table class="table table-striped">
+          <tbody>
+            <tr>
+              <th>Netmask</th>
+              <td id="td-mask"></td>
+            </tr>
+            <tr>
+              <th>Wildcard Bits</th>
+              <td id="td-wildcard"></td>
+            </tr>
+            <tr>
+              <th>Network IP</th>
+              <td id="td-network"></td>
+            </tr>
+            <tr>
+              <th>Broadcast IP</th>
+              <td id="td-broadcast"></td>
+            </tr>
+            <tr>
+              <th>Usable Host</th>
+              <td id="td-hosts"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}
+
+{% block javascript %}
+<script src="{% static 'netbox_ipv4_tools/js/ipaddr.js' %}" defer></script>
+<script src="{% static 'netbox_ipv4_tools/js/app.js' %}" defer></script>
+{% endblock javascript %}

@@ -1,0 +1,3 @@
+recursive-include netbox_ipv4_tools/static *
+recursive-include netbox_ipv4_tools/templates *
+prune netbox_ipv4_tools/api/__pycache__

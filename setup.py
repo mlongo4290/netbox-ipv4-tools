@@ -7,7 +7,7 @@ long_description = readme.read_text()
 
 setup(
     name="netbox-ipv4-tools",
-    version="0.0.1",
+    version="0.0.2",
     description="Work with ipv4 in NetBox",
     long_description=long_description,
     long_description_content_type="text/markdown",

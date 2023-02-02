@@ -40,5 +40,4 @@ python3 manage.py collectstatic --no-input
 This plugin requires netbox >= 3.4.0
 
 ## TODO
- - Add a tools to summarize CIDRs, given a list of many CIDR it should return the supernet CIDR
  - Add a table to report the types of ip ranges: public, private and special cases

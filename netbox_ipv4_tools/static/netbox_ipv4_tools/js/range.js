@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     btn_cidr_range.addEventListener("click", () => {
         card_result.classList.add("d-none");
+        cidr_input.classList.remove("is-invalid");
         try
         {
             let cidr = ipaddr.parseCIDR(cidr_input["value"]);
@@ -27,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
             mask["octets"].forEach(b => {
                 wildcard.push(255 - b);
             });
-            wildcard = wildcard.join(".")
+            wildcard = wildcard.join(".");
 
             let hosts = Math.pow(2,32-prefix_length) - 2;
 
@@ -40,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         catch
         {
-            
+            cidr_input.classList.add("is-invalid");
         }
     });
 });

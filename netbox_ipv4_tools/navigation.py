@@ -1,7 +1,7 @@
 from extras.plugins import PluginMenu, PluginMenuItem
 
 menu = PluginMenu(
-    label='IPV4 Tools',
+    label='IPv4 Tools',
     groups=(
         (
             'TOOLS',
@@ -13,6 +13,10 @@ menu = PluginMenu(
                 PluginMenuItem(
                     link='plugins:netbox_ipv4_tools:cidr_to_range',
                     link_text='CIDR to IP Range'
+                ),
+                PluginMenuItem(
+                    link='plugins:netbox_ipv4_tools:supernet_calculator',
+                    link_text='Supernet calculator'
                 ),
             ),
         ),

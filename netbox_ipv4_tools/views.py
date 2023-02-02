@@ -14,3 +14,10 @@ class CIDRToIpRangeView(View):
             request,
             "netbox_ipv4_tools/cidr-to-range.html",
         )
+
+class SupernetCalculatorView(View):
+    def get(self, request):
+        return render(
+            request,
+            "netbox_ipv4_tools/supernet-calculator.html",
+        )

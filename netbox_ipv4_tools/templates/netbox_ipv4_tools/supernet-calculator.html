@@ -40,6 +40,22 @@
               <td id="td-wildcard"></td>
             </tr>
             <tr>
+              <th>Network IP</th>
+              <td id="td-network"></td>
+            </tr>
+            <tr>
+              <th>Broadcast IP</th>
+              <td id="td-broadcast"></td>
+            </tr>
+            <tr>
+              <th>First usable IP</th>
+              <td id="td-first"></td>
+            </tr>
+            <tr>
+              <th>Last usable IP</th>
+              <td id="td-last"></td>
+            </tr>
+            <tr>
               <th>Usable Host</th>
               <td id="td-hosts"></td>
             </tr>
@@ -52,6 +68,6 @@
 {% endblock content %}
 
 {% block javascript %}
-<script src="{% static 'netbox_ipv4_tools/js/ipaddr.js' %}" defer></script>
+<script src="{% static 'netbox_ipv4_tools/js/netmask.js' %}" defer></script>
 <script src="{% static 'netbox_ipv4_tools/js/supernet.js' %}" defer></script>
 {% endblock javascript %}

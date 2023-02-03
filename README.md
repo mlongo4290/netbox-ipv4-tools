@@ -1,7 +1,7 @@
 ## netbox-ipv4-tools
 
 Work with ipv4 in NetBox.
-This tools uses [ipaddr.js](https://github.com/whitequark/ipaddr.js/) behind the scenes
+This project includes code from [netmask](https://github.com/rs/node-netmask) (rewritten in Vanilla Javascript), which is licensed under the MIT license: [original license](https://github.com/rs/node-netmask/blob/master/LICENSE.md)
 
 This plugin offers a place to retrieve
  - A table with the CIDR to netmask conversion, inluding the wildcard bits and the total hosts available per CIDR
@@ -39,5 +39,6 @@ python3 manage.py collectstatic --no-input
 ### Versions
 This plugin requires netbox >= 3.4.0
 
-## TODO
- - Add a table to report the types of ip ranges: public, private and special cases
+### Thanks
+Thanks to @rs for the work on [netmask](https://github.com/rs/node-netmask)
+Thanks to @mattieserver and his project [netbox-topology-view](https://github.com/mattieserver/netbox-topology-views). I used his work to get a working plugin and to publish it to pypi

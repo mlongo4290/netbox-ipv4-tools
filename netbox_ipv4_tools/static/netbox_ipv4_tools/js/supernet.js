@@ -16,16 +16,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 return false;
             try
             {
-                let cidr = ipaddr.parseCIDR(c);
-
-                let prefix = cidr.toString();
-                let prefix_length = cidr[1];
-                let network = ipaddr.IPv4.networkAddressFromCIDR(prefix);
-
+                let cidr = new Netmask(c);
+                let network = cidr.base.split(".").map(b => {return parseInt(b)});
                 let binary_network = "";
                 for(let i = 0; i < 4; i++)
                 {
-                    let b = network["octets"][i].toString(2);
+                    let b = network[i].toString(2);
                     b = "00000000".substr(b.length) + b;
                     binary_network += b;
                 }
@@ -56,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
                 return true;
             }
-            catch
+            catch(error)
             {
                 cidr_input.classList.add("is-invalid");
                 return false;
@@ -85,19 +81,15 @@ document.addEventListener("DOMContentLoaded", () => {
         {
             supernet[i] = parseInt(supernet[i], 2);
         }
-        let supernet_netmask = ipaddr.IPv4.subnetMaskFromPrefixLength(supernet_length);
-        let wildcard = [];
-        supernet_netmask["octets"].forEach(b => {
-            wildcard.push(255 - b);
-        });
-        wildcard = wildcard.join(".");
-
-        let hosts = Math.pow(2,32-supernet_length) - 2;
-
-        document.querySelector("#td-address").innerHTML = supernet.join(".") + "/" + supernet_length;
-        document.querySelector("#td-mask").innerHTML = supernet_netmask.toString();
-        document.querySelector("#td-wildcard").innerHTML= wildcard;
-        document.querySelector("#td-hosts").innerHTML = hosts;
+        supernet = new Netmask(supernet.join(".") + "/" + supernet_length);
+        document.querySelector("#td-address").innerHTML = supernet.toString();
+        document.querySelector("#td-mask").innerHTML = supernet.mask;
+        document.querySelector("#td-wildcard").innerHTML= supernet.hostmask;
+        document.querySelector("#td-network").innerHTML = supernet.base;
+        document.querySelector("#td-broadcast").innerHTML = supernet.broadcast;
+        document.querySelector("#td-first").innerHTML = supernet.first;
+        document.querySelector("#td-last").innerHTML = supernet.last;
+        document.querySelector("#td-hosts").innerHTML = supernet.size;
         card_result.classList.remove("d-none");
     });
 });

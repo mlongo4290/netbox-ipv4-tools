@@ -44,8 +44,16 @@
               <td id="td-broadcast"></td>
             </tr>
             <tr>
-              <th>Usable Host</th>
-              <td id="td-hosts"></td>
+              <th>First usable IP</th>
+              <td id="td-first"></td>
+            </tr>
+            <tr>
+              <th>Last usable IP</th>
+              <td id="td-last"></td>
+            </tr>
+            <tr>
+              <th>Size</th>
+              <td id="td-size"></td>
             </tr>
           </tbody>
         </table>
@@ -56,6 +64,6 @@
 {% endblock content %}
 
 {% block javascript %}
-<script src="{% static 'netbox_ipv4_tools/js/ipaddr.js' %}" defer></script>
+<script src="{% static 'netbox_ipv4_tools/js/netmask.js' %}" defer></script>
 <script src="{% static 'netbox_ipv4_tools/js/range.js' %}" defer></script>
 {% endblock javascript %}

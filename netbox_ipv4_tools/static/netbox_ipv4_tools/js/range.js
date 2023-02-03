@@ -15,28 +15,15 @@ document.addEventListener("DOMContentLoaded", () => {
         cidr_input.classList.remove("is-invalid");
         try
         {
-            let cidr = ipaddr.parseCIDR(cidr_input["value"]);
+            let cidr = new Netmask(cidr_input["value"]);
 
-            let prefix = cidr.toString();
-            let prefix_length = cidr[1];
-
-            let network = ipaddr.IPv4.networkAddressFromCIDR(prefix);
-            let broadcast = ipaddr.IPv4.broadcastAddressFromCIDR(prefix);
-            let mask = ipaddr.IPv4.subnetMaskFromPrefixLength(prefix_length);
-
-            let wildcard = [];
-            mask["octets"].forEach(b => {
-                wildcard.push(255 - b);
-            });
-            wildcard = wildcard.join(".");
-
-            let hosts = Math.pow(2,32-prefix_length) - 2;
-
-            document.querySelector("#td-mask").innerHTML = mask.toString();
-            document.querySelector("#td-wildcard").innerHTML= wildcard;
-            document.querySelector("#td-network").innerHTML = network.toString();
-            document.querySelector("#td-broadcast").innerHTML = broadcast.toString();
-            document.querySelector("#td-hosts").innerHTML = hosts;
+            document.querySelector("#td-mask").innerHTML = cidr.mask;
+            document.querySelector("#td-wildcard").innerHTML= cidr.hostmask;
+            document.querySelector("#td-network").innerHTML = cidr.base;
+            document.querySelector("#td-broadcast").innerHTML = cidr.broadcast;
+            document.querySelector("#td-first").innerHTML = cidr.first;
+            document.querySelector("#td-last").innerHTML = cidr.last;
+            document.querySelector("#td-size").innerHTML = cidr.size;
             card_result.classList.remove("d-none");
         }
         catch

@@ -40,5 +40,5 @@ python3 manage.py collectstatic --no-input
 This plugin requires netbox >= 3.4.0
 
 ### Thanks
-Thanks to @rs for the work on [netmask](https://github.com/rs/node-netmask) 
+Thanks to @rs for the work on [netmask](https://github.com/rs/node-netmask)  
 Thanks to @mattieserver and his project [netbox-topology-view](https://github.com/mattieserver/netbox-topology-views). I used his work to get a working plugin and to publish it to pypi

@@ -1,21 +1,28 @@
 from django.shortcuts import render
 from django.views.generic import View
+from django.contrib.auth.mixins import PermissionRequiredMixin
 
-class CIDRTableView(View):
+class CIDRTableView(PermissionRequiredMixin, View):
+    permission_required = "netbox_ipv4_tools.view_tools"
+
     def get(self, request):
         return render(
             request,
             "netbox_ipv4_tools/cidr.html",
         )
 
-class CIDRToIpRangeView(View):
+class CIDRToIpRangeView(PermissionRequiredMixin, View):
+    permission_required = "netbox_ipv4_tools.view_tools"
+
     def get(self, request):
         return render(
             request,
             "netbox_ipv4_tools/cidr-to-range.html",
         )
 
-class SupernetCalculatorView(View):
+class SupernetCalculatorView(PermissionRequiredMixin, View):
+    permission_required = "netbox_ipv4_tools.view_tools"
+
     def get(self, request):
         return render(
             request,

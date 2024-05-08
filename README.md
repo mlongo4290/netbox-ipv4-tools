@@ -37,7 +37,7 @@ python3 manage.py collectstatic --no-input
 ```
 
 ### Versions
-This plugin requires netbox >= 3.4.0
+This plugin requires netbox >= 4.0.0
 
 ### Thanks
 Thanks to [rs](https://github.com/rs) for the work on [netmask](https://github.com/rs/node-netmask)  
